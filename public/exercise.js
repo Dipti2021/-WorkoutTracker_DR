@@ -1,29 +1,16 @@
 const workoutTypeSelect = document.querySelector("#type");
 const cardioForm = document.querySelector(".cardio-form");
 const resistanceForm = document.querySelector(".resistance-form");
-// added the other forms
-const balanceForm = document.querySelector(".balance-form");
-const flexibilityForm = document.querySelector(".flexibility-form");
-// end
+
 const cardioNameInput = document.querySelector("#cardio-name");
 const nameInput = document.querySelector("#name");
-//names of the Selectors for the added forms
-const balanceNameInput = document.querySelector("#balance-name");
-const flexibilityNameInput = document.querySelector("#flexibility-name");
-// end
+
 const weightInput = document.querySelector("#weight");
 const setsInput = document.querySelector("#sets");
 const repsInput = document.querySelector("#reps");
 const durationInput = document.querySelector("#duration");
 const resistanceDurationInput = document.querySelector("#resistance-duration");
 const distanceInput = document.querySelector("#distance");
-//inputs for the added forms
-const balancesetsInput = document.querySelector("#balance-sets");
-const balancerepsInput = document.querySelector("#balance-reps");
-const balanceDurationInput = document.querySelector("#balance-duration");
-const flexibilitysetsInput = document.querySelector("#flexibility-sets");
-const flexibilityrepsInput = document.querySelector("#flexibility-reps");
-// end
 const completeButton = document.querySelector("button.complete");
 const addButton = document.querySelector("button.add-another");
 const toast = document.querySelector("#toast");
@@ -56,32 +43,18 @@ function handleWorkoutTypeChange(event) {
   if (workoutType === "cardio") {
     cardioForm.classList.remove("d-none");
     resistanceForm.classList.add("d-none");
-    balanceForm.classList.add("d-none");
-    flexibilityForm.classList.add("d-none");
+    
 
   } else if (workoutType === "resistance") {
     resistanceForm.classList.remove("d-none");
     cardioForm.classList.add("d-none");
-    balanceForm.classList.add("d-none");
-    flexibilityForm.classList.add("d-none");
+   
 
-  } else if (workoutType === "balance") {
-    resistanceForm.classList.add("d-none");
-    cardioForm.classList.add("d-none");
-    balanceForm.classList.remove("d-none");
-    flexibilityForm.classList.add("d-none");
-
-  }else if (workoutType === "flexibility") {
-    resistanceForm.classList.add("d-none");
-    cardioForm.classList.add("d-none");
-    balanceForm.classList.add("d-none");
-    flexibilityForm.classList.remove("d-none");
 
   }else {
     cardioForm.classList.add("d-none");
     resistanceForm.classList.add("d-none");
-    balanceForm.classList.add("d-none");
-    flexibilityForm.classList.add("d-none");
+    
   }
 
   validateInputs();
@@ -123,34 +96,7 @@ function validateInputs() {
       isValid = false;
     }
 
-    //Added the additional conditions 
-  } else if (workoutType === "balance") {
-    if (balanceNameInput.value.trim() === "") {
-      isValid = false;
-    }
-
-    if (balanceDurationInput.value.trim() === "") {
-      isValid = false;
-    }
-
-    if (balancesetsInput.value.trim() === "") {
-      isValid = false;
-    }
-    if (balancerepsInput.value.trim() === "") {
-      isValid = false;
-    }
-  } else if (workoutType === "flexibility") {
-    if (flexibilityNameInput.value.trim() === "") {
-      isValid = false;
-    }
-
-    if (balancesetsInput.value.trim() === "") {
-      isValid = false;
-    }
-    if (balancerepsInput.value.trim() === "") {
-      isValid = false;
-    }
-  } 
+  }
 
   if (isValid) {
     completeButton.removeAttribute("disabled");
@@ -180,17 +126,6 @@ async function handleFormSubmit(event) {
     workoutData.duration = Number(resistanceDurationInput.value.trim());
 
     //Added the conditions
-  } else if (workoutType === "balance") {
-    workoutData.type = "balance";
-    workoutData.name = balanceNameInput.value.trim();
-    workoutData.sets = Number(balancesetsInput.value.trim());
-    workoutData.reps = Number(balancerepsInput.value.trim());
-    workoutData.duration = Number(balanceDurationInput.value.trim());
-  } else if (workoutType === "flexibility") {
-    workoutData.type = "flexibility";
-    workoutData.name = flexibilityNameInput.value.trim();
-    workoutData.sets = Number(flexibilitysetsInput.value.trim());
-    workoutData.reps = Number(flexibilityrepsInput.value.trim());
   }
 
   await API.addExercise(workoutData);
@@ -208,18 +143,16 @@ function handleToastAnimationEnd() {
 function clearInputs() {//Added the details for clearing data
   cardioNameInput.value = "";
   nameInput.value = "";
-  balanceNameInput.value = "";
-  flexibilityNameInput.value = "";
+
   setsInput.value = "";
-  balancesetsInput.value = "";
-  flexibilitysetsInput.value = "";
+
   distanceInput.value = "";
   durationInput.value = "";
   repsInput.value = "";
-  balancerepsInput.value = "";
-  flexibilityrepsInput.value = "";
+  
+ 
   resistanceDurationInput.value = "";
-  balanceDurationInput.value = "";
+ 
   weightInput.value = "";
 }
 
