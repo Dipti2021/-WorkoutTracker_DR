@@ -1,8 +1,7 @@
 const express = require("express");
 const logger = require("morgan");
 const mongoose = require("mongoose");
-const router = require("./routes/api.js");
-const views = require("./routes/html.js");
+
 
 const PORT = process.env.PORT || 3001;
 
@@ -26,8 +25,8 @@ let db = mongoose.connect(
 );
 
 // routes
-app.use(router);
-app.use(views)
+app.use(require("./routes/api.js"));
+app.use(require("./routes/html.js"));
 
 
 
@@ -36,3 +35,7 @@ app.listen(PORT, () => {
 });
 
 module.exports = db;
+
+
+
+
