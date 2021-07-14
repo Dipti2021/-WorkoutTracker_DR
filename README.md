@@ -31,7 +31,13 @@ For this application, A workout tracker has been created for which the front end
  The web app created can be run either from the server using __localhost:3001__ or through the heroku link. Its representation is similar to the the images shown below
  
 
-   ![image3](public/budget.png)
+   ![image3](public/images/landing.png)
+   
+   ![image3](public/images/add1.png)
+   
+   ![image3](public/images/add.png)
+   
+   ![image3](public/images/dashboard.png)
    
    
 
