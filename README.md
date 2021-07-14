@@ -44,7 +44,7 @@ For this application, A workout tracker has been created for which the front end
  ## Deployment
   The app has been deployed on GITHUB, where all the codes are visible, and the working web app has been deployed on heroku
    * [The URL of the Github repo](https://github.com/Dipti2021/BudgetTracker_DR)
-   *  [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://onoffbudgetdr.herokuapp.com/)
+   *  [![Deploy](https://www.herokucdn.com/deploy/button.svg)](workoutdr.herokuapp.com/)
 
 
 
