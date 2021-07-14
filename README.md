@@ -1,5 +1,5 @@
 
-#WorkoutTracker_DR
+## WorkoutTracker_DR
 
 ![License: Dipti](https://img.shields.io/badge/Coder-Dipti'sCode-yellow.svg)
 ![License: GPL v3](https://img.shields.io/badge/License-MIT-pink.svg)
