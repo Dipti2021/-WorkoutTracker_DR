@@ -1,5 +1,5 @@
 
-# BudgetTracker_DR
+#WorkoutTracker_DR
 
 ![License: Dipti](https://img.shields.io/badge/Coder-Dipti'sCode-yellow.svg)
 ![License: GPL v3](https://img.shields.io/badge/License-MIT-pink.svg)
@@ -43,7 +43,7 @@ For this application, A workout tracker has been created for which the front end
 
  ## Deployment
   The app has been deployed on GITHUB, where all the codes are visible, and the working web app has been deployed on heroku
-   * [The URL of the Github repo](https://github.com/Dipti2021/BudgetTracker_DR)
+   * [The URL of the Github repo](https://github.com/Dipti2021/WorkoutTracker_DR)
    *  [![Deploy](https://www.herokucdn.com/deploy/button.svg)](workoutdr.herokuapp.com/)
 
 
